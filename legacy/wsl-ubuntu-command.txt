@@ -1,0 +1,45 @@
+sudo apt update
+
+sudo apt install -y python3.12 python3.12-venv python3-pip git
+
+python3.12 -m venv llm_env
+
+source llm_env/bin/activate
+
+pip uninstall -y datasets evalscope ms-swift ragas lm-eval
+
+pip install --upgrade pip setuptools wheel
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+pip install "datasets==3.6.0"
+pip install "ms-swift==4.0.0" "evalscope==1.4.2"
+pip install transformers accelerate peft trl sentencepiece
+pip install faiss-cpu sentence-transformers pymupdf pandas numpy tqdm scikit-learn openai fastapi uvicorn
+
+
+mkdir -p data/raw_books_txt
+mkdir -p data/chunks
+mkdir -p data/index
+mkdir -p data/sft
+mkdir -p outputs
+mkdir -p scripts
+mkdir -p app
+mkdir -p eval
+
+
+chmod +x init_project.sh
+./init_project.sh
+
+export OPENAI_BASE_URL=http://192.168.1.209:8000/v1
+export OPENAI_API_KEY=dummy
+export MODEL_NAME=Qwen/Qwen2.5-14B-Instruct
+
+
+sudo apt install socat -y
+
+# 监听所有接口的8002，转发到vLLM
+sudo socat TCP-LISTEN:8002,bind=0.0.0.0,fork,reuseaddr TCP:192.168.1.209:8002 &
+
+socat TCP-LISTEN:8080,bind=0.0.0.0,fork,reuseaddr TCP:192.168.1.209:8002 &
+netsh advfirewall firewall add rule name="vLLM 8080" dir=in action=allow protocol=TCP localport=8080 remoteip=any
+

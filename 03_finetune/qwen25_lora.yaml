@@ -1,0 +1,59 @@
+### LLaMA-Factory QLoRA 训练配置
+### Qwen2.5-14B-Instruct + LoRA (4-bit QLoRA)
+### 用法：cd 03_finetune/LLaMA-Factory && llamafactory-cli train ../qwen25_lora.yaml
+
+### ── 模型 ──────────────────────────────────────────────
+model_name_or_path: /mnt/d/models/Qwen2.5-14B-Instruct
+trust_remote_code: true
+
+### ── 微调方法 ─────────────────────────────────────────
+stage: sft                    # 监督微调
+do_train: true
+finetuning_type: lora
+
+### ── LoRA 参数 ────────────────────────────────────────
+lora_rank: 64                 # 越大越强，但显存消耗更多（推荐32-128）
+lora_alpha: 128               # 通常设为 lora_rank × 2
+lora_dropout: 0.05
+lora_target: all              # 微调所有线性层（q_proj, k_proj, v_proj, o_proj, gate_proj...）
+
+### ── 量化（QLoRA 4-bit）────────────────────────────────
+quantization_bit: 4
+quantization_method: bitsandbytes
+
+### ── 数据 ───────────────────────────────────────────────
+dataset: ming_military_train
+dataset_dir: data             # 相对于LLaMA-Factory目录，需要软链接
+template: qwen                # Qwen2.5 对话模板
+cutoff_len: 2048              # 最大序列长度（超过截断）
+max_samples: 50000            # 最大样本数
+overwrite_cache: true
+preprocessing_num_workers: 4
+
+### ── 训练超参数 ──────────────────────────────────────────
+output_dir: /mnt/d/ollama/train-ming-military/outputs/lora_weights
+logging_dir: /mnt/d/ollama/train-ming-military/outputs/logs
+logging_steps: 10
+save_steps: 200
+eval_steps: 200
+evaluation_strategy: steps
+load_best_model_at_end: true
+
+per_device_train_batch_size: 1
+per_device_eval_batch_size: 1
+gradient_accumulation_steps: 8   # 等效batch_size = 1 × 8 = 8
+learning_rate: 5.0e-5
+num_train_epochs: 3
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+bf16: true                    # A100/RTX30xx+ 支持bf16，老显卡改为 fp16: true
+optim: adamw_torch_fused      # 更省显存
+
+### ── 报告 ───────────────────────────────────────────────
+report_to: none               # 或 tensorboard / wandb
+run_name: ming-military-qwen25-14b-lora
+
+### ── 其他 ───────────────────────────────────────────────
+dataloader_num_workers: 2
+group_by_length: true         # 相似长度batch，提升效率
+predict_with_generate: false

@@ -1,0 +1,46 @@
+# Core ML
+torch==2.3.1
+transformers==4.44.2
+accelerate==0.33.0
+peft==0.12.0
+trl==0.9.6
+bitsandbytes==0.43.3
+datasets==2.21.0
+sentencepiece==0.2.0
+
+# Data processing
+pymupdf==1.24.10       # PDF extraction (fitz)
+marker-pdf==0.2.17     # High-quality PDF → markdown
+paddlepaddle==2.6.1    # OCR backend
+paddleocr==2.8.1       # Chinese OCR
+pillow==10.4.0
+python-docx==1.1.2
+
+# RAG stack
+chromadb==0.5.5
+sentence-transformers==3.0.1
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-chroma==0.1.3
+openai==1.40.0         # OpenAI-compat client for Ollama/vLLM
+
+# API service
+fastapi==0.112.2
+uvicorn==0.30.6
+httpx==0.27.0
+
+# Evaluation
+ragas==0.1.21
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.1
+rouge-score==0.1.2
+jieba==0.42.1          # Chinese tokenization for ROUGE
+
+# Utilities
+tqdm==4.66.5
+pyyaml==6.0.2
+python-dotenv==1.0.1
+loguru==0.7.2
+rich==13.7.1
+typer==0.12.5
