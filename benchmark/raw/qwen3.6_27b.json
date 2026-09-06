@@ -1,0 +1,44 @@
+{
+  "model": "qwen3.6:27b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "Here's the step-by-step calculation:\n\n**Method 1: Break it down (distributive property)**\n```\n15 × 37 = 15 × (30 + 7)\n        = (15 × 30) + (15 × 7)\n        = 450 + 105\n        = 555\n```\n\n**Method 2: ",
+      "eval_count": 929,
+      "prompt_eval_count": 25,
+      "gen_speed_tps": 12.41,
+      "prompt_speed_tps": 37.66,
+      "load_duration_s": 21.898,
+      "eval_duration_s": 74.883,
+      "total_duration_s": 97.462,
+      "wall_time_s": 99.499,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty military was distinguished by its prolific integration of gunpowder weaponry, fielding vast arsenals of matchlock muskets, hand cannons, and sophisticated bronze artillery like the he",
+      "eval_count": 1365,
+      "prompt_eval_count": 21,
+      "gen_speed_tps": 12.37,
+      "prompt_speed_tps": 32.12,
+      "load_duration_s": 0.401,
+      "eval_duration_s": 110.335,
+      "total_duration_s": 111.51,
+      "wall_time_s": 113.548,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "timeout",
+      "wall_time_s": 300,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 12.39,
+  "avg_prompt_speed_tps": 34.89,
+  "avg_total_duration_s": 104.486,
+  "success_count": 2,
+  "total_count": 3
+}

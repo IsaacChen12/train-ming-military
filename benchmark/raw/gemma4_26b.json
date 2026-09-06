@@ -1,0 +1,31 @@
+{
+  "model": "gemma4:26b",
+  "runs": [
+    {
+      "status": "error",
+      "error": "500 Server Error: Internal Server Error for url: http://localhost:11434/api/generate",
+      "wall_time_s": 22.719,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "error",
+      "error": "500 Server Error: Internal Server Error for url: http://localhost:11434/api/generate",
+      "wall_time_s": 21.406,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "error",
+      "error": "500 Server Error: Internal Server Error for url: http://localhost:11434/api/generate",
+      "wall_time_s": 21.409,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 0,
+  "avg_prompt_speed_tps": 0,
+  "avg_total_duration_s": 0,
+  "success_count": 0,
+  "total_count": 3
+}

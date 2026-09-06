@@ -1,0 +1,52 @@
+{
+  "model": "qwen3.8:latest",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "## 15 × 37\n\n**Using the distributive property** (breaking 37 into 30 + 7):\n\n| Step | Calculation | Result |\n|------|------------|--------|\n| 1 | 15 × 30 | 450 |\n| 2 | 15 × 7 | 105 |\n| 3 | 450 + 105 | ",
+      "eval_count": 415,
+      "prompt_eval_count": 25,
+      "gen_speed_tps": 15.52,
+      "prompt_speed_tps": 27.15,
+      "load_duration_s": 22.844,
+      "eval_duration_s": 26.732,
+      "total_duration_s": 50.501,
+      "wall_time_s": 52.568,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming military was distinguished by its early and extensive use of gunpowder weapons, including matchlock muskets (*huo qiang*) and a wide variety of bronze and iron cannons ranging from small hand",
+      "eval_count": 620,
+      "prompt_eval_count": 21,
+      "gen_speed_tps": 11.93,
+      "prompt_speed_tps": 22.6,
+      "load_duration_s": 0.376,
+      "eval_duration_s": 51.97,
+      "total_duration_s": 53.378,
+      "wall_time_s": 55.412,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "```python\nfrom typing import List, TypeVar, Optional\n\nT = TypeVar(\"T\")\n\n\ndef binary_search(\n    arr: List[T], target: T, key=None\n) -> int:\n    \"\"\"\n    Perform binary search on a sorted list to find t",
+      "eval_count": 1662,
+      "prompt_eval_count": 30,
+      "gen_speed_tps": 13.24,
+      "prompt_speed_tps": 26.47,
+      "load_duration_s": 0.321,
+      "eval_duration_s": 125.528,
+      "total_duration_s": 127.104,
+      "wall_time_s": 129.148,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 13.56,
+  "avg_prompt_speed_tps": 25.41,
+  "avg_total_duration_s": 76.994,
+  "success_count": 3,
+  "total_count": 3
+}

@@ -1,0 +1,52 @@
+{
+  "model": "qwen2.5:latest",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "To calculate 15 multiplied by 37, you can use the standard multiplication method:\n\n```\n     15\n   x37\n   ----\n    105   (This is 15 x 7)\n   450    (This is 15 x 30, or 15 x 3 with an added 0 at the en",
+      "eval_count": 111,
+      "prompt_eval_count": 44,
+      "gen_speed_tps": 106.35,
+      "prompt_speed_tps": 1631.02,
+      "load_duration_s": 3.533,
+      "eval_duration_s": 1.044,
+      "total_duration_s": 4.608,
+      "wall_time_s": 6.662,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty military equipment was advanced for its time, featuring the use of matchlock firearms alongside traditional bows and crossbows. They also employed advanced siege weapons such as canno",
+      "eval_count": 95,
+      "prompt_eval_count": 40,
+      "gen_speed_tps": 106.65,
+      "prompt_speed_tps": 2513.67,
+      "load_duration_s": 0.228,
+      "eval_duration_s": 0.891,
+      "total_duration_s": 1.143,
+      "wall_time_s": 3.19,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "Certainly! Below is a Python function that implements binary search on a sorted list. The function includes proper error handling, such as checking if the list is empty or not sorted. Additionally, a ",
+      "eval_count": 635,
+      "prompt_eval_count": 49,
+      "gen_speed_tps": 104.0,
+      "prompt_speed_tps": 1034.0,
+      "load_duration_s": 0.222,
+      "eval_duration_s": 6.106,
+      "total_duration_s": 6.384,
+      "wall_time_s": 8.438,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 105.67,
+  "avg_prompt_speed_tps": 1726.23,
+  "avg_total_duration_s": 4.045,
+  "success_count": 3,
+  "total_count": 3
+}

@@ -1,0 +1,52 @@
+{
+  "model": "qwen3.6:35b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "The result of **15 multiplied by 37** is **555**.\n\nHere is the calculation shown using the standard vertical multiplication method:\n\n```text\n   37\n x 15\n ----\n  185   (This is 37 multiplied by 5)\n+ 37",
+      "eval_count": 2287,
+      "prompt_eval_count": 25,
+      "gen_speed_tps": 53.79,
+      "prompt_speed_tps": 11.61,
+      "load_duration_s": 36.334,
+      "eval_duration_s": 42.518,
+      "total_duration_s": 81.02,
+      "wall_time_s": 83.044,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty military was renowned for its advanced arsenal that seamlessly integrated traditional cold weapons with pioneering firearm technology. Soldiers frequently utilized cast bronze cannons",
+      "eval_count": 1096,
+      "prompt_eval_count": 21,
+      "gen_speed_tps": 53.24,
+      "prompt_speed_tps": 85.29,
+      "load_duration_s": 0.385,
+      "eval_duration_s": 20.585,
+      "total_duration_s": 21.277,
+      "wall_time_s": 23.327,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "Here's a production-ready implementation with type hints, robust error handling, and a comprehensive docstring:\n\n```python\nfrom typing import Sequence, TypeVar, Any\n\nT = TypeVar('T')\n\ndef binary_searc",
+      "eval_count": 3974,
+      "prompt_eval_count": 30,
+      "gen_speed_tps": 53.71,
+      "prompt_speed_tps": 106.88,
+      "load_duration_s": 0.39,
+      "eval_duration_s": 73.986,
+      "total_duration_s": 74.717,
+      "wall_time_s": 76.766,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 53.58,
+  "avg_prompt_speed_tps": 67.93,
+  "avg_total_duration_s": 59.005,
+  "success_count": 3,
+  "total_count": 3
+}

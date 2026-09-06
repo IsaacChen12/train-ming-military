@@ -1,0 +1,52 @@
+{
+  "model": "gemma4:12b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "15 multiplied by 37 is **555**.\n\nHere are two ways to calculate it:\n\n**Method 1: Breaking it down (Distributive Property)**\nYou can split 37 into 30 and 7:\n*   $15 \\times 30 = 450$\n*   $15 \\times 7 = ",
+      "eval_count": 480,
+      "prompt_eval_count": 31,
+      "gen_speed_tps": 60.14,
+      "prompt_speed_tps": 383.0,
+      "load_duration_s": 6.84,
+      "eval_duration_s": 7.981,
+      "total_duration_s": 14.908,
+      "wall_time_s": 16.943,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty military utilized a sophisticated blend of traditional melee weaponry and advanced gunpowder technology. Soldiers commonly employed various polearms, such as spears and halberds, alon",
+      "eval_count": 798,
+      "prompt_eval_count": 27,
+      "gen_speed_tps": 58.25,
+      "prompt_speed_tps": 75.32,
+      "load_duration_s": 0.541,
+      "eval_duration_s": 13.699,
+      "total_duration_s": 14.688,
+      "wall_time_s": 16.742,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "To implement a robust binary search in Python, it is best practice to use an iterative approach (which is memory efficient) and include clear documentation and type hints.\n\nHere is the complete implem",
+      "eval_count": 1613,
+      "prompt_eval_count": 36,
+      "gen_speed_tps": 58.0,
+      "prompt_speed_tps": 107.96,
+      "load_duration_s": 0.569,
+      "eval_duration_s": 27.808,
+      "total_duration_s": 28.834,
+      "wall_time_s": 30.903,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 58.8,
+  "avg_prompt_speed_tps": 188.76,
+  "avg_total_duration_s": 19.477,
+  "success_count": 3,
+  "total_count": 3
+}

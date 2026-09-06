@@ -1,0 +1,52 @@
+{
+  "model": "qwen3.5:9b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "**The answer is 555.**\n\nHere is the step-by-step calculation using standard long multiplication:\n\n$$\n\\begin{array}{r@{\\quad}l}\n  1\\,5 & \\\\\n\\times 3\\,7 & \\\\\n\\hline\n  1\\,0\\,5 & (7 \\times 15) \\\\\n4\\,5\\,\\p",
+      "eval_count": 1266,
+      "prompt_eval_count": 25,
+      "gen_speed_tps": 83.18,
+      "prompt_speed_tps": 341.28,
+      "load_duration_s": 7.715,
+      "eval_duration_s": 15.219,
+      "total_duration_s": 23.019,
+      "wall_time_s": 25.08,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty pioneered the widespread integration of firearms into its standing army, utilizing advanced matchlock arquebuses and bronze cannons alongside traditional swords and spears. Infantry s",
+      "eval_count": 1666,
+      "prompt_eval_count": 21,
+      "gen_speed_tps": 81.46,
+      "prompt_speed_tps": 182.05,
+      "load_duration_s": 0.394,
+      "eval_duration_s": 20.453,
+      "total_duration_s": 21.015,
+      "wall_time_s": 23.099,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "```python\ndef binary_search(sorted_list, target):\n    \"\"\"\n    Perform a binary search on a sorted list to find the index of a target value.\n\n    This function assumes the input list is sorted in ascen",
+      "eval_count": 710,
+      "prompt_eval_count": 30,
+      "gen_speed_tps": 83.16,
+      "prompt_speed_tps": 120.4,
+      "load_duration_s": 0.342,
+      "eval_duration_s": 8.538,
+      "total_duration_s": 9.183,
+      "wall_time_s": 11.233,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 82.6,
+  "avg_prompt_speed_tps": 214.58,
+  "avg_total_duration_s": 17.739,
+  "success_count": 3,
+  "total_count": 3
+}
