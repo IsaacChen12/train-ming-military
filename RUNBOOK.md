@@ -319,9 +319,168 @@ ollama create ming-military -f Modelfile
 ollama run ming-military "明朝虎蹲炮的射程和威力如何？"
 ```
 
-### 5.2 Open-WebUI访问
+### 5.2 Open-WebUI 配置（qwen3.6:35b MoE + 知识库）
 
-浏览器打开 `http://localhost:3000`，选择模型 `ming-military`。
+浏览器打开 `http://localhost:3000`
+
+#### 5.2.1 配置 RAG 全局参数
+
+**Admin Panel → Settings → Documents**
+
+| 参数 | 值 | 说明 |
+|------|-----|------|
+| Embedding Model | `BAAI/bge-m3` | 中文检索最佳，首次自动下载 |
+| Chunk Size | `1024` | 配合大上下文模型 |
+| Chunk Overlap | `128` | |
+| Top K | `5` | 先用小值确认稳定，再逐步增加到 20 |
+
+#### 5.2.2 创建知识库
+
+**Workspace → Knowledge → `+` New Knowledge**
+
+```
+Name:        明代军事装备知识库
+Description: 明朝军事装备、火器、兵制专著文献
+```
+
+上传 `data/cleaned/` 中的 TXT 文件，等待向量化完成。
+
+#### 5.2.3 创建专属模型
+
+**Workspace → Models → `+` New Model**
+
+**基本信息：**
+```
+Model ID:   ming-military-35b
+Name:       明代军事助手 (qwen3.6:35b)
+Base Model: qwen3.6:35b
+```
+
+**Knowledge 选项卡：** 勾选 `明代军事装备知识库`
+
+**System Prompt：**
+```
+你是一位专精明代军事史的学术助手，擅长明朝军事装备、火器制造、兵制、战术等领域。
+
+回答时请：
+1. 优先基于检索到的史料原文，保持学术准确性
+2. 引用原文时注明文献来源
+3. 对不确定的信息如实说明，不捏造史实
+4. 使用规范的历史术语和学术语言
+
+/no_think
+```
+
+> ⚠️ **`/no_think` 必须保留**（见调整记录 2026-09-13）
+
+**Advanced Parameters：**
+```
+num_ctx:         16384
+temperature:     0.7
+top_p:           0.9
+repeat_penalty:  1.1
+```
+
+> ⚠️ **`num_ctx = 16384` 必须设置**（见调整记录 2026-09-13）
+
+点击 **Save** 保存，新建对话选择该模型即可使用。
+
+#### 5.2.4 验证连接
+
+```cmd
+docker exec ming-webui curl -s http://host.docker.internal:11434/api/tags
+```
+
+有 JSON 输出说明 Open-WebUI → Ollama 连接正常。
+
+---
+
+### 5.3 Open-WebUI 配置（qwen3.5:9b 密集模型 — 推荐日常使用）
+
+#### 模型信息
+
+| 参数 | 值 |
+|------|-----|
+| 架构 | `qwen35`（密集模型，非 MoE） |
+| 参数量 | 9.7B |
+| 文件大小 | 6.6 GB (Q4_K_M) |
+| 最大上下文 | 262,144 tokens |
+| VRAM 占用 | ~7 GB，剩余 ~9 GB 可用于 KV Cache |
+| 实测速度 | **82.6 tok/s**（benchmark 2026-09-12） |
+
+**与 qwen3.6:35b 的取舍：**
+
+| 项目 | qwen3.5:9b | qwen3.6:35b MoE |
+|------|-----------|-----------------|
+| 生成速度 | **82 tok/s** | 53 tok/s |
+| VRAM 占用 | **6.6 GB** | 23 GB |
+| 可用 KV Cache | **~9 GB** | ~1 GB |
+| 回答深度 | 一般 | **更详尽** |
+| 可同时运行其他模型 | ✅ | ❌ |
+
+> 9B 模型释放了大量显存给 KV Cache，实际可用上下文反而更长、更稳定。
+
+---
+
+#### 5.3.1 RAG 全局参数（与 5.2.1 相同，可直接复用）
+
+**Admin Panel → Settings → Documents** 设置不变：
+
+| 参数 | 值 |
+|------|-----|
+| Embedding Model | `BAAI/bge-m3` |
+| Chunk Size | `1024` |
+| Chunk Overlap | `128` |
+| Top K | `15` ← 比 35b 可以设更高，VRAM 更宽裕 |
+
+---
+
+#### 5.3.2 创建专属模型
+
+**Workspace → Models → `+` New Model**
+
+**基本信息：**
+```
+Model ID:   ming-military-9b
+Name:       明代军事助手 (qwen3.5:9b)
+Base Model: qwen3.5:9b
+```
+
+**Knowledge 选项卡：** 勾选 `明代军事装备知识库`
+
+**System Prompt：**
+```
+你是一位专精明代军事史的学术助手，擅长明朝军事装备、火器制造、兵制、战术等领域。
+
+回答时请：
+1. 优先基于检索到的史料原文，保持学术准确性
+2. 引用原文时注明文献来源
+3. 对不确定的信息如实说明，不捏造史实
+4. 使用规范的历史术语和学术语言
+```
+
+**Advanced Parameters：**
+```
+temperature:     0.7
+top_p:           0.9
+repeat_penalty:  1.1
+```
+
+> ✅ qwen3.5:9b 使用默认 num_ctx 即可正常运行，无需像 qwen3.6:35b 那样强制设为 16384。如希望支持更长对话上下文可选填 `num_ctx = 8192`。
+
+---
+
+#### 5.3.3 与 qwen3.6:35b 的配置差异说明
+
+qwen3.5:9b 在 Open-WebUI 挂载知识库后**开箱即用**，不需要 qwen3.6:35b 所需的两项强制修复：
+
+| 配置项 | qwen3.5:9b | qwen3.6:35b MoE |
+|--------|-----------|-----------------|
+| `/no_think` | 非必须 | **必须** |
+| `num_ctx = 16384` | 非必须 | **必须** |
+| 知识库挂载后正常输出 | ✅ 开箱即用 | ❌ 需修复后才可用 |
+
+根本原因：qwen3.6:35b 是 MoE 架构，thinking 模式 + RAG 上下文会撑满默认 context 窗口导致无输出；qwen3.5:9b 是密集模型，上下文占用更小，不存在此问题。
 
 ---
 
@@ -334,6 +493,9 @@ ollama run ming-military "明朝虎蹲炮的射程和威力如何？"
 | OCR中文识别差 | 改用 PaddleOCR 替代 Tesseract |
 | ChromaDB慢 | 改用 FAISS 本地索引，或部署 Milvus |
 | 中文分词差 | chunk时按句号/换行分割，而非固定字符数 |
+| RAG有来源但无输出 | num_ctx 不足，改为 16384；System Prompt 末尾加 `/no_think` |
+| Open-WebUI 思考后无答案 | qwen3.6:35b thinking 模式占满上下文，同上两步修复 |
+| 模型第一次响应极慢 | 正常，冷启动需 30~40 秒加载；在 System Prompt 中加预热请求 |
 
 ---
 
@@ -344,3 +506,33 @@ ollama run ming-military "明朝虎蹲炮的射程和威力如何？"
 - [ChromaDB Docs](https://docs.trychroma.com)
 - [RAGAS 评估框架](https://docs.ragas.io)
 - [BAAI/bge-m3 嵌入](https://huggingface.co/BAAI/bge-m3)
+
+---
+
+## 调整记录
+
+### 2026-09-13 — Open-WebUI + qwen3.6:35b RAG 无输出问题修复
+
+**现象：** 在 Open-WebUI 中使用 qwen3.6:35b 挂载知识库后，每次请求均显示"Thought for 10 seconds"并找到 4 个来源，但之后没有任何文字输出，仅显示 Follow up 建议。
+
+**根本原因：** 两个因素叠加导致 context 溢出：
+
+```
+System Prompt   ≈  400 tokens
+4个RAG chunks   ≈ 2000 tokens
+Thinking过程    ≈  800 tokens
+用户问题         ≈  100 tokens
+─────────────────────────────
+合计             ≈ 3300 tokens  >  默认 num_ctx 2048
+```
+
+模型完成 Thinking 后已无剩余 context 空间输出答案。
+
+**修复措施：**
+
+1. **关闭 Thinking 模式**：在模型 System Prompt 末尾添加 `/no_think`
+2. **增大上下文窗口**：Advanced Parameters 中设置 `num_ctx = 16384`
+
+**验证结果：** 两项同时生效后模型正常输出，速度恢复至约 53 tok/s。
+
+**影响范围：** 所有在 Open-WebUI 中使用 Qwen3 系列 MoE 模型（qwen3.6:27b、qwen3.8:latest 等）并挂载知识库的配置，均需应用相同修复。
