@@ -1,0 +1,52 @@
+{
+  "model": "qwen2.5:7b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "To calculate \\(15 \\times 37\\), you can use the standard multiplication algorithm:\n\n\\[\n15 \\times 37\n\\]\n\nFirst, break it down:\n\n\\[\n15 \\times 30 + 15 \\times 7\n\\]\n\nThis can be calculated as:\n\n\\[\n15 \\times",
+      "eval_count": 141,
+      "prompt_eval_count": 44,
+      "gen_speed_tps": 66.55,
+      "prompt_speed_tps": 149.53,
+      "load_duration_s": 0.002,
+      "eval_duration_s": 2.119,
+      "total_duration_s": 2.425,
+      "wall_time_s": 4.462,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty military equipment was advanced for its time, featuring the use of firearms, such as fire lances and hand cannons, alongside traditional weapons like spears, crossbows, and swords. Fo",
+      "eval_count": 127,
+      "prompt_eval_count": 40,
+      "gen_speed_tps": 65.21,
+      "prompt_speed_tps": 426.5,
+      "load_duration_s": 0.021,
+      "eval_duration_s": 1.948,
+      "total_duration_s": 2.082,
+      "wall_time_s": 4.123,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "Certainly! Below is a Python function that implements binary search on a sorted list. The function includes proper error handling and a docstring that explains its purpose, parameters, and return valu",
+      "eval_count": 641,
+      "prompt_eval_count": 49,
+      "gen_speed_tps": 65.77,
+      "prompt_speed_tps": 553.75,
+      "load_duration_s": 0.008,
+      "eval_duration_s": 9.746,
+      "total_duration_s": 9.853,
+      "wall_time_s": 11.919,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 65.84,
+  "avg_prompt_speed_tps": 376.59,
+  "avg_total_duration_s": 4.787,
+  "success_count": 3,
+  "total_count": 3
+}

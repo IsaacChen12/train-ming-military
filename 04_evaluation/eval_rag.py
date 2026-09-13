@@ -92,7 +92,7 @@ def main():
     parser.add_argument("--testset", default="data/testset.jsonl")
     parser.add_argument("--output", default="results/rag.json")
     parser.add_argument("--judge-url", default="http://localhost:11434/v1")
-    parser.add_argument("--judge-model", default="qwen2.5:14b")
+    parser.add_argument("--judge-model", default="qwen3.6:35b")
     parser.add_argument("--judge-key", default="ollama")
     args = parser.parse_args()
 

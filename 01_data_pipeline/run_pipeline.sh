@@ -33,11 +33,11 @@ python 01_data_pipeline/04_chunk_text.py \
 
 echo ""
 echo ">>> Step 5: 自动生成Q&A（需要Ollama运行）"
-echo "    确认Ollama已启动且qwen2.5:14b已拉取..."
+echo "    确认Ollama已启动且qwen3.6:35b已拉取（4090实测最详尽，见benchmark/report.md）..."
 python 01_data_pipeline/05_generate_qa.py \
     --input data/chunks \
     --output data/qa_pairs \
-    --model qwen2.5:14b \
+    --model qwen3.6:35b \
     --questions-per-chunk 3
 
 echo ""

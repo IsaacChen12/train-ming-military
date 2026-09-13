@@ -15,5 +15,5 @@ echo ">>> 启动RAG服务 (端口8080)..."
 python 02_rag/rag_server.py \
     --db-path data/chroma_db \
     --llm-base-url http://localhost:11434/v1 \
-    --model qwen2.5:14b \
+    --model qwen3.5:9b \
     --port 8080

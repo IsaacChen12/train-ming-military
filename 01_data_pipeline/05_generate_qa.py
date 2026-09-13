@@ -2,7 +2,7 @@
 Step 5: 用LLM自动从文本块生成Q&A对，作为SFT训练数据
 用法：python 01_data_pipeline/05_generate_qa.py \
         --input data/chunks --output data/qa_pairs \
-        --model qwen2.5:14b --questions-per-chunk 3
+        --model qwen3.6:35b --questions-per-chunk 3
 """
 import argparse
 import json
@@ -97,7 +97,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", default="data/chunks")
     parser.add_argument("--output", default="data/qa_pairs")
-    parser.add_argument("--model", default="qwen2.5:14b")
+    parser.add_argument("--model", default="qwen3.6:35b")
     parser.add_argument("--base-url", default="http://localhost:11434/v1",
                         help="OpenAI兼容API地址（Ollama或vLLM）")
     parser.add_argument("--api-key", default="ollama")

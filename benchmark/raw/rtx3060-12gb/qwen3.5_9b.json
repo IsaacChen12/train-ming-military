@@ -1,0 +1,52 @@
+{
+  "model": "qwen3.5:9b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "To calculate $15 \\times 37$, you can use the standard long multiplication method:\n\n```text\n    37\n  x 15\n  ----\n   185  (This is 37 x 5)\n +370   (This is 37 x 10)\n  ----\n   555\n```\n\n**Step-by-step bre",
+      "eval_count": 1187,
+      "prompt_eval_count": 25,
+      "gen_speed_tps": 54.04,
+      "prompt_speed_tps": 2.29,
+      "load_duration_s": 18.996,
+      "eval_duration_s": 21.967,
+      "total_duration_s": 51.907,
+      "wall_time_s": 53.983,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty pioneered the widespread adoption of early matchlock muskets, allowing infantry to engage enemies from a significant range. Soldiers were frequently equipped with heavy iron plate arm",
+      "eval_count": 1577,
+      "prompt_eval_count": 21,
+      "gen_speed_tps": 53.77,
+      "prompt_speed_tps": 80.7,
+      "load_duration_s": 0.01,
+      "eval_duration_s": 29.327,
+      "total_duration_s": 29.644,
+      "wall_time_s": 31.732,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "```python\nfrom typing import List, Optional\n\ndef binary_search(data: List[int], target: int) -> Optional[int]:\n    \"\"\"\n    Perform binary search on a sorted list to find the index of a target element.",
+      "eval_count": 754,
+      "prompt_eval_count": 30,
+      "gen_speed_tps": 53.82,
+      "prompt_speed_tps": 127.18,
+      "load_duration_s": 0.009,
+      "eval_duration_s": 14.01,
+      "total_duration_s": 14.3,
+      "wall_time_s": 16.374,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 53.88,
+  "avg_prompt_speed_tps": 70.06,
+  "avg_total_duration_s": 31.95,
+  "success_count": 3,
+  "total_count": 3
+}

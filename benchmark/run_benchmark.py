@@ -239,8 +239,8 @@ def main():
 
     console.print("\n" + "=" * 60)
     print_summary_table(all_results)
-    console.print(f"\n✅ Report saved: [bold]{REPORT_PATH}[/bold]")
-    console.print(f"✅ Raw data:     [bold]{RAW_DIR}[/bold]")
+    console.print(f"\n[green]OK[/green] Report saved: [bold]{REPORT_PATH}[/bold]")
+    console.print(f"[green]OK[/green] Raw data:     [bold]{RAW_DIR}[/bold]")
 
 
 if __name__ == "__main__":

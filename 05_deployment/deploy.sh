@@ -3,7 +3,7 @@
 set -e
 
 PROJECT_ROOT="/mnt/d/ollama/train-ming-military"
-MERGED_MODEL="/mnt/d/models/ming-military-14b"
+MERGED_MODEL="/mnt/d/models/ming-military-9b"
 cd "$PROJECT_ROOT"
 source .venv/bin/activate
 
@@ -27,9 +27,9 @@ if [ -d "$MERGED_MODEL" ]; then
     cd "$PROJECT_ROOT"
     ACTIVE_MODEL="ming-military"
 else
-    echo ">>> 微调模型未找到，使用基座模型 qwen2.5:14b"
-    ollama pull qwen2.5:14b
-    ACTIVE_MODEL="qwen2.5:14b"
+    echo ">>> 微调模型未找到，使用基座模型 qwen3.5:9b"
+    ollama pull qwen3.5:9b
+    ACTIVE_MODEL="qwen3.5:9b"
 fi
 
 # 启动RAG服务（后台）
