@@ -1,0 +1,262 @@
+[
+  {
+    "model": "qwen2.5:7b",
+    "runs": [
+      {
+        "status": "ok",
+        "response_preview": "To calculate \\(15 \\times 37\\), you can use the standard multiplication algorithm:\n\n\\[\n15 \\times 37\n\\]\n\nFirst, break it down:\n\n\\[\n15 \\times 30 + 15 \\times 7\n\\]\n\nThis can be calculated as:\n\n\\[\n15 \\times",
+        "eval_count": 141,
+        "prompt_eval_count": 44,
+        "gen_speed_tps": 66.55,
+        "prompt_speed_tps": 149.53,
+        "load_duration_s": 0.002,
+        "eval_duration_s": 2.119,
+        "total_duration_s": 2.425,
+        "wall_time_s": 4.462,
+        "prompt_id": "short",
+        "prompt_label": "Short (math)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "The Ming Dynasty military equipment was advanced for its time, featuring the use of firearms, such as fire lances and hand cannons, alongside traditional weapons like spears, crossbows, and swords. Fo",
+        "eval_count": 127,
+        "prompt_eval_count": 40,
+        "gen_speed_tps": 65.21,
+        "prompt_speed_tps": 426.5,
+        "load_duration_s": 0.021,
+        "eval_duration_s": 1.948,
+        "total_duration_s": 2.082,
+        "wall_time_s": 4.123,
+        "prompt_id": "medium",
+        "prompt_label": "Medium (history)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "Certainly! Below is a Python function that implements binary search on a sorted list. The function includes proper error handling and a docstring that explains its purpose, parameters, and return valu",
+        "eval_count": 641,
+        "prompt_eval_count": 49,
+        "gen_speed_tps": 65.77,
+        "prompt_speed_tps": 553.75,
+        "load_duration_s": 0.008,
+        "eval_duration_s": 9.746,
+        "total_duration_s": 9.853,
+        "wall_time_s": 11.919,
+        "prompt_id": "long",
+        "prompt_label": "Long (code)"
+      }
+    ],
+    "avg_gen_speed_tps": 65.84,
+    "avg_prompt_speed_tps": 376.59,
+    "avg_total_duration_s": 4.787,
+    "success_count": 3,
+    "total_count": 3
+  },
+  {
+    "model": "qwen3.6:35b",
+    "runs": [
+      {
+        "status": "ok",
+        "response_preview": "The product of **15 multiplied by 37** is **555**.\n\nHere are two clear ways to show the calculation:\n\n### 🔹 Method 1: Distributive Property (Breaking it down)\nBreak `37` into `30 + 7`:\n```\n15 × 37 = 1",
+        "eval_count": 1027,
+        "prompt_eval_count": 25,
+        "gen_speed_tps": 40.92,
+        "prompt_speed_tps": 2.41,
+        "load_duration_s": 59.159,
+        "eval_duration_s": 25.1,
+        "total_duration_s": 94.646,
+        "wall_time_s": 96.691,
+        "prompt_id": "short",
+        "prompt_label": "Short (math)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "The Ming military relied heavily on a blend of traditional cold weapons and advanced early firearms, featuring the widespread adoption of hand cannons, moukros, and heavy bronze or iron cannons like t",
+        "eval_count": 1328,
+        "prompt_eval_count": 21,
+        "gen_speed_tps": 37.77,
+        "prompt_speed_tps": 57.81,
+        "load_duration_s": 0.021,
+        "eval_duration_s": 35.16,
+        "total_duration_s": 35.59,
+        "wall_time_s": 37.661,
+        "prompt_id": "medium",
+        "prompt_label": "Medium (history)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "Here's a production-ready implementation with type hints, comprehensive error handling, and a detailed docstring:\n\n```python\nfrom typing import Sequence, TypeVar\n\nT = TypeVar('T')\n\ndef binary_search(a",
+        "eval_count": 3692,
+        "prompt_eval_count": 30,
+        "gen_speed_tps": 37.68,
+        "prompt_speed_tps": 71.64,
+        "load_duration_s": 0.021,
+        "eval_duration_s": 97.995,
+        "total_duration_s": 98.497,
+        "wall_time_s": 100.565,
+        "prompt_id": "long",
+        "prompt_label": "Long (code)"
+      }
+    ],
+    "avg_gen_speed_tps": 38.79,
+    "avg_prompt_speed_tps": 43.95,
+    "avg_total_duration_s": 76.244,
+    "success_count": 3,
+    "total_count": 3
+  },
+  {
+    "model": "qwen3.5:9b",
+    "runs": [
+      {
+        "status": "ok",
+        "response_preview": "To calculate $15 \\times 37$, you can use the standard long multiplication method:\n\n```text\n    37\n  x 15\n  ----\n   185  (This is 37 x 5)\n +370   (This is 37 x 10)\n  ----\n   555\n```\n\n**Step-by-step bre",
+        "eval_count": 1187,
+        "prompt_eval_count": 25,
+        "gen_speed_tps": 54.04,
+        "prompt_speed_tps": 2.29,
+        "load_duration_s": 18.996,
+        "eval_duration_s": 21.967,
+        "total_duration_s": 51.907,
+        "wall_time_s": 53.983,
+        "prompt_id": "short",
+        "prompt_label": "Short (math)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "The Ming Dynasty pioneered the widespread adoption of early matchlock muskets, allowing infantry to engage enemies from a significant range. Soldiers were frequently equipped with heavy iron plate arm",
+        "eval_count": 1577,
+        "prompt_eval_count": 21,
+        "gen_speed_tps": 53.77,
+        "prompt_speed_tps": 80.7,
+        "load_duration_s": 0.01,
+        "eval_duration_s": 29.327,
+        "total_duration_s": 29.644,
+        "wall_time_s": 31.732,
+        "prompt_id": "medium",
+        "prompt_label": "Medium (history)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "```python\nfrom typing import List, Optional\n\ndef binary_search(data: List[int], target: int) -> Optional[int]:\n    \"\"\"\n    Perform binary search on a sorted list to find the index of a target element.",
+        "eval_count": 754,
+        "prompt_eval_count": 30,
+        "gen_speed_tps": 53.82,
+        "prompt_speed_tps": 127.18,
+        "load_duration_s": 0.009,
+        "eval_duration_s": 14.01,
+        "total_duration_s": 14.3,
+        "wall_time_s": 16.374,
+        "prompt_id": "long",
+        "prompt_label": "Long (code)"
+      }
+    ],
+    "avg_gen_speed_tps": 53.88,
+    "avg_prompt_speed_tps": 70.06,
+    "avg_total_duration_s": 31.95,
+    "success_count": 3,
+    "total_count": 3
+  },
+  {
+    "model": "qwen2.5:14b",
+    "runs": [
+      {
+        "status": "ok",
+        "response_preview": "To calculate 15 multiplied by 37, you can follow these steps:\n\n\\[\n15 \\times 37 = (10 \\times 37) + (5 \\times 37)\n\\]\n\nFirst, calculate \\(10 \\times 37\\):\n\n\\[\n10 \\times 37 = 370\n\\]\n\nNext, calculate \\(5 \\t",
+        "eval_count": 149,
+        "prompt_eval_count": 44,
+        "gen_speed_tps": 34.9,
+        "prompt_speed_tps": 396.27,
+        "load_duration_s": 22.463,
+        "eval_duration_s": 4.269,
+        "total_duration_s": 26.855,
+        "wall_time_s": 28.916,
+        "prompt_id": "short",
+        "prompt_label": "Short (math)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "The Ming Dynasty military was equipped with a variety of weapons, including advanced firearms like the arquebus, which were used extensively in their army and navy. In addition to firearms, traditiona",
+        "eval_count": 146,
+        "prompt_eval_count": 40,
+        "gen_speed_tps": 34.58,
+        "prompt_speed_tps": 265.88,
+        "load_duration_s": 0.032,
+        "eval_duration_s": 4.223,
+        "total_duration_s": 4.433,
+        "wall_time_s": 6.504,
+        "prompt_id": "medium",
+        "prompt_label": "Medium (history)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "Certainly! Below is a Python function that implements binary search on a sorted list. It includes error handling to ensure the input is valid and a detailed docstring explaining the function's purpose",
+        "eval_count": 703,
+        "prompt_eval_count": 49,
+        "gen_speed_tps": 34.5,
+        "prompt_speed_tps": 255.7,
+        "load_duration_s": 0.011,
+        "eval_duration_s": 20.375,
+        "total_duration_s": 20.596,
+        "wall_time_s": 22.64,
+        "prompt_id": "long",
+        "prompt_label": "Long (code)"
+      }
+    ],
+    "avg_gen_speed_tps": 34.66,
+    "avg_prompt_speed_tps": 305.95,
+    "avg_total_duration_s": 17.295,
+    "success_count": 3,
+    "total_count": 3
+  },
+  {
+    "model": "gemma4:12b",
+    "runs": [
+      {
+        "status": "ok",
+        "response_preview": "To multiply 15 by 37, you can use a few different methods. Here are two common ways to calculate it:\n\n### Method 1: Breaking it down (Distributive Property)\nYou can break 37 into 30 and 7 to make the ",
+        "eval_count": 548,
+        "prompt_eval_count": 31,
+        "gen_speed_tps": 38.33,
+        "prompt_speed_tps": 5.6,
+        "load_duration_s": 4.889,
+        "eval_duration_s": 14.298,
+        "total_duration_s": 24.724,
+        "wall_time_s": 26.794,
+        "prompt_id": "short",
+        "prompt_label": "Short (math)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "The Ming Dynasty military utilized a diverse array of traditional weapons, including long spears, halberds, and heavy sabers. Soldiers were protected by sophisticated armor, often featuring lamellar o",
+        "eval_count": 907,
+        "prompt_eval_count": 27,
+        "gen_speed_tps": 37.97,
+        "prompt_speed_tps": 95.11,
+        "load_duration_s": 0.015,
+        "eval_duration_s": 23.889,
+        "total_duration_s": 24.279,
+        "wall_time_s": 26.312,
+        "prompt_id": "medium",
+        "prompt_label": "Medium (history)"
+      },
+      {
+        "status": "ok",
+        "response_preview": "Here is a robust implementation of the binary search algorithm in Python. \n\nI have included type hinting, a comprehensive docstring, and error handling to ensure the input is valid before processing.\n",
+        "eval_count": 1750,
+        "prompt_eval_count": 36,
+        "gen_speed_tps": 37.18,
+        "prompt_speed_tps": 129.09,
+        "load_duration_s": 0.005,
+        "eval_duration_s": 47.069,
+        "total_duration_s": 47.484,
+        "wall_time_s": 49.507,
+        "prompt_id": "long",
+        "prompt_label": "Long (code)"
+      }
+    ],
+    "avg_gen_speed_tps": 37.83,
+    "avg_prompt_speed_tps": 76.6,
+    "avg_total_duration_s": 32.162,
+    "success_count": 3,
+    "total_count": 3
+  }
+]

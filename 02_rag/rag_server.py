@@ -149,7 +149,7 @@ def main():
     parser.add_argument("--embedding-model", default=EMBED_MODEL)
     parser.add_argument("--llm-base-url", default="http://localhost:11434/v1")
     parser.add_argument("--llm-api-key", default="ollama")
-    parser.add_argument("--model", default="qwen2.5:14b")
+    parser.add_argument("--model", default="qwen3.5:9b")
     parser.add_argument("--port", type=int, default=8080)
     parser.add_argument("--top-k", type=int, default=TOP_K)
     args = parser.parse_args()

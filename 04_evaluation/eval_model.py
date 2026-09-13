@@ -3,7 +3,7 @@
 使用 ROUGE + LLM-as-Judge 两种方法
 用法：python 04_evaluation/eval_model.py \
         --model-url http://localhost:11434/v1 \
-        --model qwen2.5:14b \
+        --model qwen3.5:9b \
         --testset data/testset.jsonl \
         --output results/baseline.json
 """
@@ -111,12 +111,12 @@ def rouge_score(reference: str, hypothesis: str) -> Dict:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-url", default="http://localhost:11434/v1")
-    parser.add_argument("--model", default="qwen2.5:14b", help="被评估的模型")
+    parser.add_argument("--model", default="qwen3.5:9b", help="被评估的模型")
     parser.add_argument("--api-key", default="ollama")
     parser.add_argument("--testset", default="data/testset.jsonl")
     parser.add_argument("--output", default="results/baseline.json")
-    parser.add_argument("--judge-model", default="qwen2.5:14b",
-                        help="LLM-as-Judge使用的模型（可以是同一个）")
+    parser.add_argument("--judge-model", default="qwen3.6:35b",
+                        help="LLM-as-Judge使用的模型（建议用回答最详尽的候选模型，见benchmark/report.md）")
     parser.add_argument("--system", default=None, help="系统提示词文件路径")
     args = parser.parse_args()
 

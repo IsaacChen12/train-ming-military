@@ -1,9 +1,9 @@
 ### LLaMA-Factory QLoRA 训练配置
-### Qwen2.5-14B-Instruct + LoRA (4-bit QLoRA)
-### 用法：cd 03_finetune/LLaMA-Factory && llamafactory-cli train ../qwen25_lora.yaml
+### Qwen3.5-9B-Instruct + LoRA (4-bit QLoRA)
+### 用法：cd 03_finetune/LLaMA-Factory && llamafactory-cli train ../qwen35_lora.yaml
 
 ### ── 模型 ──────────────────────────────────────────────
-model_name_or_path: /mnt/d/models/Qwen2.5-14B-Instruct
+model_name_or_path: /mnt/d/models/Qwen3.5-9B-Instruct
 trust_remote_code: true
 
 ### ── 微调方法 ─────────────────────────────────────────
@@ -24,7 +24,7 @@ quantization_method: bitsandbytes
 ### ── 数据 ───────────────────────────────────────────────
 dataset: ming_military_train
 dataset_dir: data             # 相对于LLaMA-Factory目录，需要软链接
-template: qwen                # Qwen2.5 对话模板
+template: qwen3               # Qwen3.5 对话模板（若LLaMA-Factory版本无qwen3模板，请查阅其templates列表确认名称）
 cutoff_len: 2048              # 最大序列长度（超过截断）
 max_samples: 50000            # 最大样本数
 overwrite_cache: true
@@ -51,9 +51,12 @@ optim: adamw_torch_fused      # 更省显存
 
 ### ── 报告 ───────────────────────────────────────────────
 report_to: none               # 或 tensorboard / wandb
-run_name: ming-military-qwen25-14b-lora
+run_name: ming-military-qwen35-9b-lora
 
 ### ── 其他 ───────────────────────────────────────────────
 dataloader_num_workers: 2
 group_by_length: true         # 相似长度batch，提升效率
 predict_with_generate: false
+
+# 显存估算（RTX 4090 Laptop 16GB 实测环境，见 benchmark/report.md）：
+# 9B × 4bit ≈ 4.5GB 模型 + 梯度/优化器 ≈ 总计 10-13GB，16GB显卡可直接训练，无需24GB+显卡

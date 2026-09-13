@@ -179,13 +179,15 @@ Cannot share memory with other loaded models. Must be run alone.
 
 | File | Model | Notes |
 |------|-------|-------|
-| `raw/qwen2.5_latest.json` | qwen2.5:latest | All pass |
-| `raw/qwen3.5_9b.json` | qwen3.5:9b | All pass |
-| `raw/gemma4_12b.json` | gemma4:12b | All pass |
-| `raw/qwen3.6_35b.json` | qwen3.6:35b | All pass |
-| `raw/qwen3.8_latest.json` | qwen3.8:latest | All pass, thinking mode |
-| `raw/qwen3.6_27b.json` | qwen3.6:27b | 2/3, long code timed out |
-| `raw/gemma4_26b.json` | gemma4:26b | All errors (OOM) |
+| `benchmark/raw/rtx4090-laptop-16gb/qwen2.5_latest.json` | qwen2.5:latest | All pass |
+| `benchmark/raw/rtx4090-laptop-16gb/qwen3.5_9b.json` | qwen3.5:9b | All pass |
+| `benchmark/raw/rtx4090-laptop-16gb/gemma4_12b.json` | gemma4:12b | All pass |
+| `benchmark/raw/rtx4090-laptop-16gb/qwen3.6_35b.json` | qwen3.6:35b | All pass |
+| `benchmark/raw/rtx4090-laptop-16gb/qwen3.8_latest.json` | qwen3.8:latest | All pass, thinking mode |
+| `benchmark/raw/rtx4090-laptop-16gb/qwen3.6_27b.json` | qwen3.6:27b | 2/3, long code timed out |
+| `benchmark/raw/rtx4090-laptop-16gb/gemma4_26b.json` | gemma4:26b | All errors (OOM) |
+
+Machine B's (RTX 3060 12GB) benchmark report is at [rtx3060-12gb.md](rtx3060-12gb.md).
 
 ---
 

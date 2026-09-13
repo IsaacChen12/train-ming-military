@@ -9,7 +9,7 @@ cd "$PROJECT_ROOT"
 source .venv/bin/activate
 
 echo "=========================================="
-echo " Qwen2.5-14B LoRA 微调"
+echo " Qwen3.5-9B LoRA 微调"
 echo "=========================================="
 
 # Step 1: 准备数据集
@@ -60,7 +60,7 @@ nvidia-smi --query-gpu=name,memory.total,memory.free --format=csv,noheader
 mkdir -p outputs/logs
 
 cd "$LLAMAFACTORY_DIR"
-llamafactory-cli train "$PROJECT_ROOT/03_finetune/qwen25_lora.yaml" \
+llamafactory-cli train "$PROJECT_ROOT/03_finetune/qwen35_lora.yaml" \
     2>&1 | tee "$PROJECT_ROOT/outputs/training.log"
 
 echo ""

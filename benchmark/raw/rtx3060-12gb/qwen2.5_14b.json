@@ -1,0 +1,52 @@
+{
+  "model": "qwen2.5:14b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "To calculate 15 multiplied by 37, you can follow these steps:\n\n\\[\n15 \\times 37 = (10 \\times 37) + (5 \\times 37)\n\\]\n\nFirst, calculate \\(10 \\times 37\\):\n\n\\[\n10 \\times 37 = 370\n\\]\n\nNext, calculate \\(5 \\t",
+      "eval_count": 149,
+      "prompt_eval_count": 44,
+      "gen_speed_tps": 34.9,
+      "prompt_speed_tps": 396.27,
+      "load_duration_s": 22.463,
+      "eval_duration_s": 4.269,
+      "total_duration_s": 26.855,
+      "wall_time_s": 28.916,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty military was equipped with a variety of weapons, including advanced firearms like the arquebus, which were used extensively in their army and navy. In addition to firearms, traditiona",
+      "eval_count": 146,
+      "prompt_eval_count": 40,
+      "gen_speed_tps": 34.58,
+      "prompt_speed_tps": 265.88,
+      "load_duration_s": 0.032,
+      "eval_duration_s": 4.223,
+      "total_duration_s": 4.433,
+      "wall_time_s": 6.504,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "Certainly! Below is a Python function that implements binary search on a sorted list. It includes error handling to ensure the input is valid and a detailed docstring explaining the function's purpose",
+      "eval_count": 703,
+      "prompt_eval_count": 49,
+      "gen_speed_tps": 34.5,
+      "prompt_speed_tps": 255.7,
+      "load_duration_s": 0.011,
+      "eval_duration_s": 20.375,
+      "total_duration_s": 20.596,
+      "wall_time_s": 22.64,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 34.66,
+  "avg_prompt_speed_tps": 305.95,
+  "avg_total_duration_s": 17.295,
+  "success_count": 3,
+  "total_count": 3
+}

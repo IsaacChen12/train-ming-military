@@ -4,9 +4,9 @@ set -e
 
 PROJECT_ROOT="/mnt/d/ollama/train-ming-military"
 LLAMAFACTORY_DIR="$PROJECT_ROOT/03_finetune/LLaMA-Factory"
-BASE_MODEL="/mnt/d/models/Qwen2.5-14B-Instruct"
+BASE_MODEL="/mnt/d/models/Qwen3.5-9B-Instruct"
 LORA_WEIGHTS="$PROJECT_ROOT/outputs/lora_weights"
-MERGED_MODEL="/mnt/d/models/ming-military-14b"
+MERGED_MODEL="/mnt/d/models/ming-military-9b"
 
 cd "$PROJECT_ROOT"
 source .venv/bin/activate
@@ -16,7 +16,7 @@ echo ">>> 合并LoRA权重..."
 llamafactory-cli export \
     --model_name_or_path "$BASE_MODEL" \
     --adapter_name_or_path "$LORA_WEIGHTS" \
-    --template qwen \
+    --template qwen3 \
     --finetuning_type lora \
     --export_dir "$MERGED_MODEL" \
     --export_size 4 \

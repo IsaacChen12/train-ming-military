@@ -1,0 +1,52 @@
+{
+  "model": "qwen3.6:35b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "The product of **15 multiplied by 37** is **555**.\n\nHere are two clear ways to show the calculation:\n\n### 🔹 Method 1: Distributive Property (Breaking it down)\nBreak `37` into `30 + 7`:\n```\n15 × 37 = 1",
+      "eval_count": 1027,
+      "prompt_eval_count": 25,
+      "gen_speed_tps": 40.92,
+      "prompt_speed_tps": 2.41,
+      "load_duration_s": 59.159,
+      "eval_duration_s": 25.1,
+      "total_duration_s": 94.646,
+      "wall_time_s": 96.691,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming military relied heavily on a blend of traditional cold weapons and advanced early firearms, featuring the widespread adoption of hand cannons, moukros, and heavy bronze or iron cannons like t",
+      "eval_count": 1328,
+      "prompt_eval_count": 21,
+      "gen_speed_tps": 37.77,
+      "prompt_speed_tps": 57.81,
+      "load_duration_s": 0.021,
+      "eval_duration_s": 35.16,
+      "total_duration_s": 35.59,
+      "wall_time_s": 37.661,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "Here's a production-ready implementation with type hints, comprehensive error handling, and a detailed docstring:\n\n```python\nfrom typing import Sequence, TypeVar\n\nT = TypeVar('T')\n\ndef binary_search(a",
+      "eval_count": 3692,
+      "prompt_eval_count": 30,
+      "gen_speed_tps": 37.68,
+      "prompt_speed_tps": 71.64,
+      "load_duration_s": 0.021,
+      "eval_duration_s": 97.995,
+      "total_duration_s": 98.497,
+      "wall_time_s": 100.565,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 38.79,
+  "avg_prompt_speed_tps": 43.95,
+  "avg_total_duration_s": 76.244,
+  "success_count": 3,
+  "total_count": 3
+}

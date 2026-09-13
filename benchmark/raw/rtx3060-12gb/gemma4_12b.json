@@ -1,0 +1,52 @@
+{
+  "model": "gemma4:12b",
+  "runs": [
+    {
+      "status": "ok",
+      "response_preview": "To multiply 15 by 37, you can use a few different methods. Here are two common ways to calculate it:\n\n### Method 1: Breaking it down (Distributive Property)\nYou can break 37 into 30 and 7 to make the ",
+      "eval_count": 548,
+      "prompt_eval_count": 31,
+      "gen_speed_tps": 38.33,
+      "prompt_speed_tps": 5.6,
+      "load_duration_s": 4.889,
+      "eval_duration_s": 14.298,
+      "total_duration_s": 24.724,
+      "wall_time_s": 26.794,
+      "prompt_id": "short",
+      "prompt_label": "Short (math)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "The Ming Dynasty military utilized a diverse array of traditional weapons, including long spears, halberds, and heavy sabers. Soldiers were protected by sophisticated armor, often featuring lamellar o",
+      "eval_count": 907,
+      "prompt_eval_count": 27,
+      "gen_speed_tps": 37.97,
+      "prompt_speed_tps": 95.11,
+      "load_duration_s": 0.015,
+      "eval_duration_s": 23.889,
+      "total_duration_s": 24.279,
+      "wall_time_s": 26.312,
+      "prompt_id": "medium",
+      "prompt_label": "Medium (history)"
+    },
+    {
+      "status": "ok",
+      "response_preview": "Here is a robust implementation of the binary search algorithm in Python. \n\nI have included type hinting, a comprehensive docstring, and error handling to ensure the input is valid before processing.\n",
+      "eval_count": 1750,
+      "prompt_eval_count": 36,
+      "gen_speed_tps": 37.18,
+      "prompt_speed_tps": 129.09,
+      "load_duration_s": 0.005,
+      "eval_duration_s": 47.069,
+      "total_duration_s": 47.484,
+      "wall_time_s": 49.507,
+      "prompt_id": "long",
+      "prompt_label": "Long (code)"
+    }
+  ],
+  "avg_gen_speed_tps": 37.83,
+  "avg_prompt_speed_tps": 76.6,
+  "avg_total_duration_s": 32.162,
+  "success_count": 3,
+  "total_count": 3
+}
