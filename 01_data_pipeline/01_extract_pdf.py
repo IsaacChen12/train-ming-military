@@ -1,6 +1,6 @@
 """
-Step 1: 从PDF书籍提取纯文本
-支持：数字PDF (fitz快速提取) + 扫描PDF (自动降级到OCR提示)
+Step 1: 从PDF/Word书籍提取纯文本
+支持：数字PDF (fitz快速提取) + 扫描PDF (自动降级到OCR提示) + Word文档 (.docx)
 用法：python 01_data_pipeline/01_extract_pdf.py --input data/raw --output data/txt
 """
 import argparse
@@ -8,6 +8,7 @@ import json
 import re
 from pathlib import Path
 import fitz  # PyMuPDF
+import docx  # python-docx
 from tqdm import tqdm
 from loguru import logger
 
@@ -46,9 +47,21 @@ def extract_pdf(pdf_path: Path, output_dir: Path) -> dict:
     return {"file": pdf_path.name, "status": "ok", "pages": len(pages_text), "chars": len(full_text)}
 
 
+def extract_docx(docx_path: Path, output_dir: Path) -> dict:
+    document = docx.Document(str(docx_path))
+    paragraphs = [p.text.strip() for p in document.paragraphs if p.text.strip()]
+    full_text = "\n\n".join(paragraphs)
+
+    out_file = output_dir / f"{docx_path.stem}.txt"
+    out_file.write_text(full_text, encoding="utf-8")
+
+    logger.info(f"✓ {docx_path.name} → {len(paragraphs)} 段，{len(full_text)} 字符")
+    return {"file": docx_path.name, "status": "ok", "paragraphs": len(paragraphs), "chars": len(full_text)}
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="data/raw", help="原始PDF目录")
+    parser.add_argument("--input", default="data/raw", help="原始PDF/Word目录")
     parser.add_argument("--output", default="data/txt", help="输出TXT目录")
     args = parser.parse_args()
 
@@ -56,12 +69,13 @@ def main():
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    pdfs = list(input_dir.glob("*.pdf")) + list(input_dir.glob("*.PDF"))
-    if not pdfs:
-        logger.warning(f"在 {input_dir} 中未找到PDF文件")
+    pdfs = sorted({p.resolve() for p in input_dir.iterdir() if p.suffix.lower() == ".pdf"})
+    docxs = sorted({p.resolve() for p in input_dir.iterdir() if p.suffix.lower() == ".docx"})
+    if not pdfs and not docxs:
+        logger.warning(f"在 {input_dir} 中未找到PDF或Word文件")
         return
 
-    logger.info(f"共找到 {len(pdfs)} 个PDF文件")
+    logger.info(f"共找到 {len(pdfs)} 个PDF文件，{len(docxs)} 个Word文件")
     results = []
     for pdf_path in tqdm(pdfs, desc="提取PDF"):
         try:
@@ -70,6 +84,14 @@ def main():
         except Exception as e:
             logger.error(f"处理 {pdf_path.name} 失败: {e}")
             results.append({"file": pdf_path.name, "status": "error", "error": str(e)})
+
+    for docx_path in tqdm(docxs, desc="提取Word"):
+        try:
+            result = extract_docx(docx_path, output_dir)
+            results.append(result)
+        except Exception as e:
+            logger.error(f"处理 {docx_path.name} 失败: {e}")
+            results.append({"file": docx_path.name, "status": "error", "error": str(e)})
 
     # 同时处理data/raw中的txt文件（直接复制）
     for txt_path in input_dir.glob("*.txt"):
