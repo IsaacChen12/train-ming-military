@@ -12,6 +12,8 @@ This file records the actual work done in each session (what was run, what code 
 
 ## 2026-09-27
 
+- **在代码里标注分块策略待研究 / Marked the chunking strategy as future research in code**：在 `04_chunk_text.py` 顶部模块docstring和 `CHAPTER_RE` 定义处各加了一条TODO注释，指向 RUNBOOK.md §1.4/1.5，提醒 `CHAPTER_RE` 目前未被实际调用、分块策略仍需进一步研究。项目本身新增了 `CLAUDE.md`，把环境说明/文档双语约定/文档同步维护规则从个人记忆迁移到了这里（仓库内、任何session都能读到），避免规则只存在于我的个人记忆里。
+  Added TODO comments in `04_chunk_text.py` (module docstring and next to the `CHAPTER_RE` definition) pointing to RUNBOOK.md §1.4/1.5, flagging that `CHAPTER_RE` isn't actually called yet and the chunking strategy still needs further research. Also added `CLAUDE.md` to the project, moving the environment notes / bilingual-docs convention / docs-sync maintenance rule out of personal assistant memory and into the repo itself (readable by any session, not dependent on memory retrieval).
 - **文档双语化 / Bilingualized the docs**：[README.md](README.md) 和 [RUNBOOK.md](RUNBOOK.md) 改为中英双语（同一文件内中英段落交替），代码块保持单一版本、注释改为中英对照。
   Converted [README.md](README.md) and [RUNBOOK.md](RUNBOOK.md) to bilingual (Chinese/English paragraphs interleaved within the same file); code blocks stay as a single version with bilingual inline comments.
 - **补充分块策略说明 / Documented the chunking strategy**：在 RUNBOOK.md §1.4 里写清楚了 `04_chunk_text.py` 目前的实际切分逻辑，并指出脚本里定义的章节正则 `CHAPTER_RE` 其实没有被调用——目前只是"段落+字数"切分，不具备章节感知能力；标注为后续研究待办。

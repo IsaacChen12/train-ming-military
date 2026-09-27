@@ -48,6 +48,10 @@ As of 2026-09-27, the material processed into `data/chunks/` is as follows:
 >
 > Whenever new material is added to `data/raw/` and run through the chunking pipeline, this section and the corpus-statistics subsection in Stage 1 of [RUNBOOK.md](RUNBOOK.md) must be updated at the same time, so the docs stay in sync with the actual data.
 
+> 🔬 **待研究 / Future research**：当前分块策略（`04_chunk_text.py`）只是"段落+字数"切分的基线，还会做进一步研究和调优（章节感知切分、语义/标点边界切分等）。详见 [RUNBOOK.md](RUNBOOK.md) §1.4/1.5 及代码里对应的 TODO 注释。
+>
+> The current chunking strategy (`04_chunk_text.py`) is only a "paragraph + character count" baseline and will get further research and tuning later (chapter-aware splitting, semantic/punctuation-boundary splitting, etc.). See [RUNBOOK.md](RUNBOOK.md) §1.4/1.5 and the matching TODO comments in the code.
+
 ## 目录结构 / Directory Structure
 
 ```

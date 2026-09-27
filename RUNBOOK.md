@@ -258,9 +258,9 @@ The actual splitting logic currently in `04_chunk_text.py` (`chunk_size=512`, `o
 >
 > The script defines a chapter-heading regex, `CHAPTER_RE` (matching things like "Chapter X / Section X"), but the current splitting logic **does not actually call it** — splitting today is purely "paragraph + character count," with no awareness of chapter/section boundaries. This matters especially for docx sources (which lack the clear pagination/chapter structure a PDF has) that would benefit from this regex for more semantic splitting. In practice (4 military-history papers → 316 chunks) the result is usable, but chunk boundaries sometimes fall in the middle of an argument.
 
-**后续待办**：分块策略后续会做进一步研究和调优（例如启用/替换章节感知切分、按语义或标点边界切分、针对不同文体（论文正文 vs 古籍引文/表格）采用不同 `chunk_size`），当前参数仅作为跑通全流程的基线，不代表最终方案。
+**后续待办**：分块策略后续会做进一步研究和调优（例如启用/替换章节感知切分、按语义或标点边界切分、针对不同文体（论文正文 vs 古籍引文/表格）采用不同 `chunk_size`），当前参数仅作为跑通全流程的基线，不代表最终方案。代码里 `04_chunk_text.py` 的模块docstring和 `CHAPTER_RE` 定义处也各有一条对应的TODO注释。
 
-**Future work**: The chunking strategy will get further research and tuning later (e.g. enabling/replacing chapter-aware splitting, splitting on semantic or punctuation boundaries, using different `chunk_size` values for different content types such as paper prose vs. classical-text quotations/tables). The current parameters are only a baseline to get the full pipeline running end to end, not the final design.
+**Future work**: The chunking strategy will get further research and tuning later (e.g. enabling/replacing chapter-aware splitting, splitting on semantic or punctuation boundaries, using different `chunk_size` values for different content types such as paper prose vs. classical-text quotations/tables). The current parameters are only a baseline to get the full pipeline running end to end, not the final design. `04_chunk_text.py` also carries matching TODO comments in its module docstring and next to the `CHAPTER_RE` definition.
 
 ### 1.5 当前语料统计 / Current Corpus Statistics
 

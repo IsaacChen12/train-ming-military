@@ -2,6 +2,10 @@
 Step 4: 语义分块 — 将长文本切割成适合RAG和SFT的片段
 策略：优先按段落/章节边界切分，再按字符数限制
 用法：python 01_data_pipeline/04_chunk_text.py --input data/cleaned --output data/chunks
+
+TODO（待进一步研究，见 RUNBOOK.md §1.4/1.5）：
+当前只做"段落+字数"切分，CHAPTER_RE 未被实际调用，不具备章节/小节边界感知；
+后续考虑启用/替换章节感知切分、按语义或标点边界切分、针对不同文体用不同 chunk_size。
 """
 import argparse
 import json
@@ -13,6 +17,7 @@ from tqdm import tqdm
 from loguru import logger
 
 
+# TODO: 目前未被调用，仅作为章节感知切分的预留正则——后续研究分块策略时应接入 chunk_text() 或移除
 CHAPTER_RE = re.compile(
     r"^(第[零一二三四五六七八九十百千\d]+[章节卷篇]|[一二三四五六七八九十]+、|\d+[\.\、])",
     re.MULTILINE,
